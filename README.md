@@ -41,6 +41,6 @@
     <p>This project is licensed under the MIT License - see the LICENSE file for details.</p>
     
     <hr>
-    <p style="text-align: center; color: #888;">Created with ❤️ and ☕️ by [Your Name] | [Current Year]</p>
+    <p style="text-align: center; color: #888;">Created with ❤️ and ☕️ by CodeShow LapZ | 2024</p>
 
 </html>
