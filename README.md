@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
+
     <h1>Assignment 3: Concurrent Java Application</h1>
     
     <h2>Introduction</h2>
@@ -46,5 +42,5 @@
     
     <hr>
     <p style="text-align: center; color: #888;">Created with ❤️ and ☕️ by [Your Name] | [Current Year]</p>
-</body>
+
 </html>
