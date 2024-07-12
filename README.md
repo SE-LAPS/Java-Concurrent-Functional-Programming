@@ -3,43 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment 3 README</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1 {
-            color: #333;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 5px;
-        }
-        h2 {
-            color: #555;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 5px;
-        }
-        p {
-            color: #666;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        .learning-outcomes {
-            margin-top: 20px;
-        }
-        .emoji {
-            font-size: 1.2em;
-            margin-right: 10px;
-        }
-    </style>
 </head>
 <body>
     <h1>Assignment 3: Concurrent Java Application</h1>
