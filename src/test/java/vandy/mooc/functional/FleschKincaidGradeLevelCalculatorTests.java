@@ -14,7 +14,6 @@ import java.util.function.Predicate;
 import static org.junit.Assert.assertEquals;
 
 public class FleschKincaidGradeLevelCalculatorTests {
-
     @Rule
     public Timeout timeout = new Timeout(3, TimeUnit.SECONDS);
 
@@ -24,10 +23,10 @@ public class FleschKincaidGradeLevelCalculatorTests {
      */
     @Test
     @Rubric(
-            value = "testCalculate",
-            goal = "To ensure that the Flesch-Kincaid grade level is calculated correctly.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
+        value = "testCalculate",
+        goal = "To ensure that the Flesch-Kincaid grade level is calculated correctly.",
+        points = 1.0,
+        reference = "FleschKincaidGradeLevelCalculatorTests.java"
     )
     public void testCalculate() {
         // Arrange
@@ -35,7 +34,7 @@ public class FleschKincaidGradeLevelCalculatorTests {
 
         // Act
         double actualCalculateResult =
-                FleschKincaidGradeLevelCalculator.calculate(text);
+            FleschKincaidGradeLevelCalculator.calculate(text);
 
         // Assert
         assertEquals(-3.40, actualCalculateResult, 0.01);
@@ -47,11 +46,11 @@ public class FleschKincaidGradeLevelCalculatorTests {
      */
     @Test
     @Rubric(
-            value = "testCalculate2",
-            goal = "To ensure that the Flesch-Kincaid grade level is calculated correctly for a " +
-                    "string with only vowels.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
+        value = "testCalculate2",
+        goal = "To ensure that the Flesch-Kincaid grade level is calculated correctly for a " +
+            "string with only vowels.",
+        points = 1.0,
+        reference = "FleschKincaidGradeLevelCalculatorTests.java"
     )
     public void testCalculate2() {
         // Arrange
@@ -59,7 +58,7 @@ public class FleschKincaidGradeLevelCalculatorTests {
 
         // Act
         double actualCalculateResult =
-                FleschKincaidGradeLevelCalculator.calculate(text);
+            FleschKincaidGradeLevelCalculator.calculate(text);
 
         // Assert
         assertEquals(-3.40, actualCalculateResult, 0.01);
@@ -71,11 +70,11 @@ public class FleschKincaidGradeLevelCalculatorTests {
      */
     @Test
     @Rubric(
-            value = "testCalculate3",
-            goal = "To ensure that the Flesch-Kincaid grade level is calculated correctly for a " +
-                    "string with a single character.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
+        value = "testCalculate3",
+        goal = "To ensure that the Flesch-Kincaid grade level is calculated correctly for a " +
+            "string with a single character.",
+        points = 1.0,
+        reference = "FleschKincaidGradeLevelCalculatorTests.java"
     )
     public void testCalculate3() {
         // Arrange
@@ -83,7 +82,7 @@ public class FleschKincaidGradeLevelCalculatorTests {
 
         // Act
         double actualCalculateResult =
-                FleschKincaidGradeLevelCalculator.calculate(text);
+            FleschKincaidGradeLevelCalculator.calculate(text);
 
         // Assert
         assertEquals(-3.40, actualCalculateResult, 0.01);
@@ -95,11 +94,11 @@ public class FleschKincaidGradeLevelCalculatorTests {
      */
     @Test
     @Rubric(
-            value = "testCalculate4",
-            goal = "To ensure that the Flesch-Kincaid grade level is calculated correctly for a null " +
-                    "string.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
+        value = "testCalculate4",
+        goal = "To ensure that the Flesch-Kincaid grade level is calculated correctly for a null " +
+            "string.",
+        points = 1.0,
+        reference = "FleschKincaidGradeLevelCalculatorTests.java"
     )
     public void testCalculate4() {
         // Arrange
@@ -107,7 +106,7 @@ public class FleschKincaidGradeLevelCalculatorTests {
 
         // Act
         double actualCalculateResult =
-                FleschKincaidGradeLevelCalculator.calculate(text);
+            FleschKincaidGradeLevelCalculator.calculate(text);
 
         // Assert
         assertEquals(0.0, actualCalculateResult, 0.0);
@@ -119,11 +118,11 @@ public class FleschKincaidGradeLevelCalculatorTests {
      */
     @Test
     @Rubric(
-            value = "testCalculate5",
-            goal = "To ensure that the Flesch-Kincaid grade level is calculated correctly for an " +
-                    "empty string.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
+        value = "testCalculate5",
+        goal = "To ensure that the Flesch-Kincaid grade level is calculated correctly for an " +
+            "empty string.",
+        points = 1.0,
+        reference = "FleschKincaidGradeLevelCalculatorTests.java"
     )
     public void testCalculate5() {
         // Arrange
@@ -131,7 +130,7 @@ public class FleschKincaidGradeLevelCalculatorTests {
 
         // Act
         double actualCalculateResult =
-                FleschKincaidGradeLevelCalculator.calculate(text);
+            FleschKincaidGradeLevelCalculator.calculate(text);
 
         // Assert
         assertEquals(0.0, actualCalculateResult, 0.0);
@@ -143,10 +142,10 @@ public class FleschKincaidGradeLevelCalculatorTests {
      */
     @Test
     @Rubric(
-            value = "testComputeFleschKincaidGradeLevelScore",
-            goal = "To ensure that the Flesch-Kincaid grade level score is computed correctly.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
+        value = "testComputeFleschKincaidGradeLevelScore",
+        goal = "To ensure that the Flesch-Kincaid grade level score is computed correctly.",
+        points = 1.0,
+        reference = "FleschKincaidGradeLevelCalculatorTests.java"
     )
     public void testComputeFleschKincaidGradeLevelScore() {
         // Arrange
@@ -156,10 +155,11 @@ public class FleschKincaidGradeLevelCalculatorTests {
 
         // Act
         double actualComputeFleschKincaidGradeLevelScoreResult =
-                FleschKincaidGradeLevelCalculator.computeFleschKincaidGradeLevelScore(
-                        sentenceCount,
-                        wordCount,
-                        syllableCount);
+            FleschKincaidGradeLevelCalculator
+                .computeFleschKincaidGradeLevelScore(
+                    sentenceCount,
+                    wordCount,
+                    syllableCount);
 
         // Assert
         assertEquals(-3.40, actualComputeFleschKincaidGradeLevelScoreResult, 0.01);
@@ -167,15 +167,17 @@ public class FleschKincaidGradeLevelCalculatorTests {
 
     /**
      * Method under test:
-     * {@link FleschKincaidGradeLevelCalculator#computeFleschKincaidGradeLevelScore(int, int, int)}
+     * {@link
+     * FleschKincaidGradeLevelCalculator#computeFleschKincaidGradeLevelScore(int,
+     * int, int)}
      */
     @Test
     @Rubric(
-            value = "testComputeFleschKincaidGradeLevelScore2",
-            goal = "To ensure that the Flesch-Kincaid grade level score is computed correctly for a " +
-                    "simple input.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
+        value = "testComputeFleschKincaidGradeLevelScore2",
+        goal = "To ensure that the Flesch-Kincaid grade level score is computed correctly for a " +
+            "simple input.",
+        points = 1.0,
+        reference = "FleschKincaidGradeLevelCalculatorTests.java"
     )
     public void testComputeFleschKincaidGradeLevelScore2() {
         // Arrange
@@ -185,10 +187,11 @@ public class FleschKincaidGradeLevelCalculatorTests {
 
         // Act
         double actualComputeFleschKincaidGradeLevelScoreResult =
-                FleschKincaidGradeLevelCalculator.computeFleschKincaidGradeLevelScore(
-                        sentenceCount,
-                        wordCount,
-                        syllableCount);
+            FleschKincaidGradeLevelCalculator
+                .computeFleschKincaidGradeLevelScore(
+                    sentenceCount,
+                    wordCount,
+                    syllableCount);
 
         // Assert
         assertEquals(-3.40, actualComputeFleschKincaidGradeLevelScoreResult, 0.01);
@@ -196,15 +199,17 @@ public class FleschKincaidGradeLevelCalculatorTests {
 
     /**
      * Method under test:
-     * {@link FleschKincaidGradeLevelCalculator#computeFleschKincaidGradeLevelScore(int, int, int)}
+     * {@link
+     * FleschKincaidGradeLevelCalculator#computeFleschKincaidGradeLevelScore(int,
+     * int, int)}
      */
     @Test
     @Rubric(
-            value = "testComputeFleschKincaidGradeLevelScore3",
-            goal = "To ensure that the Flesch-Kincaid grade level score is computed correctly for a " +
-                    "more complex input.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
+        value = "testComputeFleschKincaidGradeLevelScore3",
+        goal = "To ensure that the Flesch-Kincaid grade level score is computed correctly for a " +
+            "more complex input.",
+        points = 1.0,
+        reference = "FleschKincaidGradeLevelCalculatorTests.java"
     )
     public void testComputeFleschKincaidGradeLevelScore3() {
         // Arrange
@@ -214,10 +219,11 @@ public class FleschKincaidGradeLevelCalculatorTests {
 
         // Act
         double actualComputeFleschKincaidGradeLevelScoreResult =
-                FleschKincaidGradeLevelCalculator.computeFleschKincaidGradeLevelScore(
-                        sentenceCount,
-                        wordCount,
-                        syllableCount);
+            FleschKincaidGradeLevelCalculator
+                .computeFleschKincaidGradeLevelScore(
+                    sentenceCount,
+                    wordCount,
+                    syllableCount);
 
         // Assert
         assertEquals(-2.62, actualComputeFleschKincaidGradeLevelScoreResult, 0.01);
@@ -225,15 +231,17 @@ public class FleschKincaidGradeLevelCalculatorTests {
 
     /**
      * Method under test:
-     * {@link FleschKincaidGradeLevelCalculator#computeFleschKincaidGradeLevelScore(int, int, int)}
+     * {@link
+     * FleschKincaidGradeLevelCalculator#computeFleschKincaidGradeLevelScore(int,
+     * int, int)}
      */
     @Test
     @Rubric(
-            value = "testComputeFleschKincaidGradeLevelScore4",
-            goal = "To ensure that the Flesch-Kincaid grade level score is computed correctly when " +
-                    "the sentence count is 0.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
+        value = "testComputeFleschKincaidGradeLevelScore4",
+        goal = "To ensure that the Flesch-Kincaid grade level score is computed correctly when " +
+            "the sentence count is 0.",
+        points = 1.0,
+        reference = "FleschKincaidGradeLevelCalculatorTests.java"
     )
     public void testComputeFleschKincaidGradeLevelScore4() {
         // Arrange
@@ -243,16 +251,17 @@ public class FleschKincaidGradeLevelCalculatorTests {
 
         // Act
         double actualComputeFleschKincaidGradeLevelScoreResult =
-                FleschKincaidGradeLevelCalculator.computeFleschKincaidGradeLevelScore(
-                        sentenceCount,
-                        wordCount,
-                        syllableCount);
+            FleschKincaidGradeLevelCalculator
+                .computeFleschKincaidGradeLevelScore(
+                    sentenceCount,
+                    wordCount,
+                    syllableCount);
 
         // Assert
         assertEquals(
-                Double.POSITIVE_INFINITY,
-                actualComputeFleschKincaidGradeLevelScoreResult,
-                0.0);
+            Double.POSITIVE_INFINITY,
+            actualComputeFleschKincaidGradeLevelScoreResult,
+            0.0);
     }
 
     /**
@@ -261,21 +270,21 @@ public class FleschKincaidGradeLevelCalculatorTests {
      */
     @Test
     @Rubric(
-            value = "testCountSentences",
-            goal = "To ensure that the number of sentences in the text is counted correctly.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
+        value = "testCountSentences",
+        goal = "To ensure that the number of sentences in the text is counted correctly.",
+        points = 1.0,
+        reference = "FleschKincaidGradeLevelCalculatorTests.java"
     )
     public void testCountSentences() {
         // Arrange
-        String text = "This is a sentence. This is another sentence.";
+        String text = "Text";
 
         // Act
         int actualCountSentencesResult =
-                FleschKincaidGradeLevelCalculator.countSentences(text);
+            FleschKincaidGradeLevelCalculator.countSentences(text);
 
         // Assert
-        assertEquals(2, actualCountSentencesResult);
+        assertEquals(1, actualCountSentencesResult);
     }
 
     /**
@@ -284,22 +293,24 @@ public class FleschKincaidGradeLevelCalculatorTests {
      */
     @Test
     @Rubric(
-            value = "testCountWords",
-            goal = "To ensure that the number of words in the text is counted correctly.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
+        value = "testCountWords",
+        goal = "To ensure that the number of words in the text is counted correctly.",
+        points = 1.0,
+        reference = "FleschKincaidGradeLevelCalculatorTests.java"
     )
     public void testCountWords() {
         // Arrange
-        String text = "This is a test.";
+        String text = "Text";
 
         // Act
         int actualCountWordsResult =
-                FleschKincaidGradeLevelCalculator.countWords(text);
+            FleschKincaidGradeLevelCalculator.countWords(text);
 
         // Assert
-        assertEquals(4, actualCountWordsResult);
+        assertEquals(1, actualCountWordsResult);
     }
+
+// ...
 
     /**
      * Method under test:
@@ -307,42 +318,19 @@ public class FleschKincaidGradeLevelCalculatorTests {
      */
     @Test
     @Rubric(
-            value = "testCountSyllables2",
-            goal = "To ensure that the number of syllables in a word is counted correctly.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
+        value = "testCountSyllables2",
+        goal = "To ensure that the number of syllables in the text is counted correctly for a " +
+            "simple word.",
+        points = 1.0,
+        reference = "FleschKincaidGradeLevelCalculatorTests.java"
     )
     public void testCountSyllables2() {
         // Arrange
-        String word = "hello";
+        String text = "foo";
 
         // Act
         int actualCountSyllablesResult =
-                FleschKincaidGradeLevelCalculator.countSyllables(word);
-
-        // Assert
-        assertEquals(2, actualCountSyllablesResult);
-    }
-
-    /**
-     * Method under test:
-     * {@link FleschKincaidGradeLevelCalculator#countSyllables(String)}
-     */
-    @Test
-    @Rubric(
-            value = "testCountSyllables3",
-            goal = "To ensure that the number of syllables in a single-character word is counted " +
-                    "correctly.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
-    )
-    public void testCountSyllables3() {
-        // Arrange
-        String word = "a";
-
-        // Act
-        int actualCountSyllablesResult =
-                FleschKincaidGradeLevelCalculator.countSyllables(word);
+            FleschKincaidGradeLevelCalculator.countSyllables(text);
 
         // Assert
         assertEquals(1, actualCountSyllablesResult);
@@ -354,106 +342,53 @@ public class FleschKincaidGradeLevelCalculatorTests {
      */
     @Test
     @Rubric(
-            value = "testCountSyllables4",
-            goal = "To ensure that the number of syllables in a sentence with multiple words is " +
-                    "counted correctly.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
+        value = "testCountSyllables3",
+        goal = "To ensure that the number of syllables in the text is counted correctly for a " +
+            "single character word.",
+        points = 1.0,
+        reference = "FleschKincaidGradeLevelCalculatorTests.java"
     )
-    public void testCountSyllables4() {
+    public void testCountSyllables3() {
         // Arrange
-        String sentence = "This is a test.";
+        String text = "e";
 
         // Act
         int actualCountSyllablesResult =
-                FleschKincaidGradeLevelCalculator.countSyllables(sentence);
+            FleschKincaidGradeLevelCalculator.countSyllables(text);
 
         // Assert
-        assertEquals(4, actualCountSyllablesResult);
+        assertEquals(1, actualCountSyllablesResult);
     }
 
     /**
      * Method under test:
-     * {@link FleschKincaidGradeLevelCalculator#countSyllables(String)}
+     * {@link FleschKincaidGradeLevelCalculator#countSentences(String)}
      */
     @Test
     @Rubric(
-            value = "testCountSyllables5",
-            goal = "To ensure that the number of syllables in a null string is handled correctly.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
-    )
-    public void testCountSyllables5() {
-        // Arrange
-        String text = null;
-
-        // Act
-        int actualCountSyllablesResult =
-                FleschKincaidGradeLevelCalculator.countSyllables(text);
-
-        // Assert
-        assertEquals(0, actualCountSyllablesResult);
-    }
-
-    /**
-     * Method under test:
-     * {@link FleschKincaidGradeLevelCalculator#countSyllables(String)}
-     */
-    @Test
-    @Rubric(
-            value = "testCountSyllables6",
-            goal = "To ensure that the number of syllables in an empty string is handled correctly.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
-    )
-    public void testCountSyllables6() {
-        // Arrange
-        String text = "";
-
-        // Act
-        int actualCountSyllablesResult =
-                FleschKincaidGradeLevelCalculator.countSyllables(text);
-
-        // Assert
-        assertEquals(0, actualCountSyllablesResult);
-    }
-
-    /**
-     * Method under test:
-     * {@link FleschKincaidGradeLevelCalculator#countItems(String, Predicate)}
-     */
-    @Test
-    @Rubric(
-            value = "testCountSentences2",
-            goal = "To ensure that the number of sentences in a text with multiple sentences is " +
-                    "counted correctly.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
+        value = "testCountSentences2",
+        goal = "To ensure that the number of sentences in the text is counted correctly.",
+        points = 1.0,
+        reference = "FleschKincaidGradeLevelCalculatorTests.java"
     )
     public void testCountSentences2() {
         // Arrange
-        String text = "This is a sentence. This is another sentence.";
+        String text = "a.b is a file name. And so is b.c.";
 
         // Act
-        int actualCountSentencesResult =
-                FleschKincaidGradeLevelCalculator.countItems(
-                        text,
-                        sentence -> sentence.endsWith("."));
-
-        // Assert
-        assertEquals(2, actualCountSentencesResult);
+        assertEquals(2, FleschKincaidGradeLevelCalculator.countSentences(text));
     }
 
     /**
      * Method under test:
-     * {@link FleschKincaidGradeLevelCalculator#countItems(String, Predicate)}
+     * {@link FleschKincaidGradeLevelCalculator#countSentences(String)}
      */
     @Test
     @Rubric(
-            value = "testCountSentences3",
-            goal = "To ensure that the number of sentences in a null string is handled correctly.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
+        value = "testCountSentences3",
+        goal = "To ensure that the number of sentences in an empty string is counted as 0.",
+        points = 1.0,
+        reference = "FleschKincaidGradeLevelCalculatorTests.java"
     )
     public void testCountSentences3() {
         // Arrange
@@ -461,9 +396,7 @@ public class FleschKincaidGradeLevelCalculatorTests {
 
         // Act
         int actualCountSentencesResult =
-                FleschKincaidGradeLevelCalculator.countItems(
-                        text,
-                        sentence -> sentence.endsWith("."));
+            FleschKincaidGradeLevelCalculator.countSentences(text);
 
         // Assert
         assertEquals(0, actualCountSentencesResult);
@@ -471,14 +404,14 @@ public class FleschKincaidGradeLevelCalculatorTests {
 
     /**
      * Method under test:
-     * {@link FleschKincaidGradeLevelCalculator#countItems(String, Predicate)}
+     * {@link FleschKincaidGradeLevelCalculator#countSentences(String)}
      */
     @Test
     @Rubric(
-            value = "testCountSentences4",
-            goal = "To ensure that the number of sentences in an empty string is handled correctly.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
+        value = "testCountSentences4",
+        goal = "To ensure that the number of sentences in an empty string is counted as 0.",
+        points = 1.0,
+        reference = "FleschKincaidGradeLevelCalculatorTests.java"
     )
     public void testCountSentences4() {
         // Arrange
@@ -486,9 +419,7 @@ public class FleschKincaidGradeLevelCalculatorTests {
 
         // Act
         int actualCountSentencesResult =
-                FleschKincaidGradeLevelCalculator.countItems(
-                        text,
-                        sentence -> sentence.endsWith("."));
+            FleschKincaidGradeLevelCalculator.countSentences(text);
 
         // Assert
         assertEquals(0, actualCountSentencesResult);
@@ -496,40 +427,33 @@ public class FleschKincaidGradeLevelCalculatorTests {
 
     /**
      * Method under test:
-     * {@link FleschKincaidGradeLevelCalculator#countItems(String, Function)}
+     * {@link FleschKincaidGradeLevelCalculator#countWords(String)}
      */
     @Test
     @Rubric(
-            value = "testCountWords2",
-            goal = "To ensure that the number of words in a text with special characters is counted " +
-                    "correctly.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
+        value = "testCountWords2",
+        goal = "To ensure that the number of words in the text is counted correctly.",
+        points = 1.0,
+        reference = "FleschKincaidGradeLevelCalculatorTests.java"
     )
     public void testCountWords2() {
         // Arrange
-        String text = "This is a, test!";
+        String text = "foo bar times 2 is foo $2.00 @ bar foo bar @bar";
 
         // Act
-        int actualCountWordsResult =
-                FleschKincaidGradeLevelCalculator.countItems(
-                        text,
-                        word -> word.matches("\\w+"));
-
-        // Assert
-        assertEquals(4, actualCountWordsResult);
+        assertEquals(10, FleschKincaidGradeLevelCalculator.countWords(text));
     }
 
     /**
      * Method under test:
-     * {@link FleschKincaidGradeLevelCalculator#countItems(String, Function)}
+     * {@link FleschKincaidGradeLevelCalculator#countWords(String)}
      */
     @Test
     @Rubric(
-            value = "testCountWords3",
-            goal = "To ensure that the number of words in a null string is handled correctly.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
+        value = "testCountWords3",
+        goal = "To ensure that the number of words in an empty string is counted as 0.",
+        points = 1.0,
+        reference = "FleschKincaidGradeLevelCalculatorTests.java"
     )
     public void testCountWords3() {
         // Arrange
@@ -537,9 +461,7 @@ public class FleschKincaidGradeLevelCalculatorTests {
 
         // Act
         int actualCountWordsResult =
-                FleschKincaidGradeLevelCalculator.countItems(
-                        text,
-                        word -> word.matches("\\w+"));
+            FleschKincaidGradeLevelCalculator.countWords(text);
 
         // Assert
         assertEquals(0, actualCountWordsResult);
@@ -547,14 +469,14 @@ public class FleschKincaidGradeLevelCalculatorTests {
 
     /**
      * Method under test:
-     * {@link FleschKincaidGradeLevelCalculator#countItems(String, Function)}
+     * {@link FleschKincaidGradeLevelCalculator#countWords(String)}
      */
     @Test
     @Rubric(
-            value = "testCountWords4",
-            goal = "To ensure that the number of words in an empty string is handled correctly.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
+        value = "testCountWords4",
+        goal = "To ensure that the number of words in an empty string is counted as 0.",
+        points = 1.0,
+        reference = "FleschKincaidGradeLevelCalculatorTests.java"
     )
     public void testCountWords4() {
         // Arrange
@@ -562,35 +484,7 @@ public class FleschKincaidGradeLevelCalculatorTests {
 
         // Act
         int actualCountWordsResult =
-                FleschKincaidGradeLevelCalculator.countItems(
-                        text,
-                        word -> word.matches("\\w+"));
-
-        // Assert
-        assertEquals(0, actualCountWordsResult);
-    }
-
-    /**
-     * Method under test:
-     * {@link FleschKincaidGradeLevelCalculator#countItems(String, Function)}
-     */
-    @Test
-    @Rubric(
-            value = "testCountWords5",
-            goal = "To ensure that the number of words in a text with only non-word characters is " +
-                    "counted correctly.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
-    )
-    public void testCountWords5() {
-        // Arrange
-        String text = "!@#$%^&*()";
-
-        // Act
-        int actualCountWordsResult =
-                FleschKincaidGradeLevelCalculator.countItems(
-                        text,
-                        word -> word.matches("\\w+"));
+            FleschKincaidGradeLevelCalculator.countWords(text);
 
         // Assert
         assertEquals(0, actualCountWordsResult);
@@ -602,47 +496,75 @@ public class FleschKincaidGradeLevelCalculatorTests {
      */
     @Test
     @Rubric(
-            value = "testCountSyllables7",
-            goal = "To ensure that the number of syllables in a text with multiple words and " +
-                    "special characters is counted correctly.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
+        value = "testCountSyllables",
+        goal = "To ensure that the number of syllables in the text is counted correctly.",
+        points = 1.0,
+        reference = "FleschKincaidGradeLevelCalculatorTests.java"
+    )
+    public void testCountSyllables() {
+        // Arrange
+        String text = "Text";
+
+        // Act
+        int actualCountSyllablesResult =
+            FleschKincaidGradeLevelCalculator.countSyllables(text);
+
+        // Assert
+        assertEquals(1, actualCountSyllablesResult);
+    }
+
+    /**
+     * Method under test:
+     * {@link FleschKincaidGradeLevelCalculator#countSyllables(String)}
+     */
+    @Test
+    @Rubric(
+        value = "testCountSyllables4",
+        goal = "To ensure that the number of syllables in the text is counted correctly.",
+        points = 1.0,
+        reference = "FleschKincaidGradeLevelCalculatorTests.java"
+    )
+    public void testCountSyllables4() {
+        // Arrange
+        String text = "The cat in the hat.";
+
+        // Act
+        assertEquals(5, FleschKincaidGradeLevelCalculator.countSyllables(text));
+    }
+
+    @Test
+    @Rubric(
+        value = "testCountSyllables7",
+        goal = "To ensure that the number of syllables in the text is counted correctly.",
+        points = 1.0,
+        reference = "FleschKincaidGradeLevelCalculatorTests.java"
     )
     public void testCountSyllables7() {
         // Arrange
-        String text = "Hello, world!";
+        String text = "The cat ate the canary.";
 
         // Act
-        int actualCountSyllablesResult =
-                FleschKincaidGradeLevelCalculator.countItems(
-                        text,
-                        FleschKincaidGradeLevelCalculator::countSyllables);
-
-        // Assert
-        assertEquals(3, actualCountSyllablesResult);
+        assertEquals(8, FleschKincaidGradeLevelCalculator.countSyllables(text));
     }
 
     /**
      * Method under test:
-     * {@link FleschKincaidGradeLevelCalculator#countItems(String, Function)}
+     * {@link FleschKincaidGradeLevelCalculator#countSyllables(String)}
      */
     @Test
     @Rubric(
-            value = "testCountSyllables8",
-            goal = "To ensure that the number of syllables in a null string is handled correctly " +
-                    "when using a function to count items.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
+        value = "testCountSyllables5",
+        goal = "To ensure that the number of syllables in a null string is counted as 0.",
+        points = 1.0,
+        reference = "FleschKincaidGradeLevelCalculatorTests.java"
     )
-    public void testCountSyllables8() {
+    public void testCountSyllables5() {
         // Arrange
         String text = null;
 
         // Act
         int actualCountSyllablesResult =
-                FleschKincaidGradeLevelCalculator.countItems(
-                        text,
-                        FleschKincaidGradeLevelCalculator::countSyllables);
+            FleschKincaidGradeLevelCalculator.countSyllables(text);
 
         // Assert
         assertEquals(0, actualCountSyllablesResult);
@@ -650,25 +572,22 @@ public class FleschKincaidGradeLevelCalculatorTests {
 
     /**
      * Method under test:
-     * {@link FleschKincaidGradeLevelCalculator#countItems(String, Function)}
+     * {@link FleschKincaidGradeLevelCalculator#countSyllables(String)}
      */
     @Test
     @Rubric(
-            value = "testCountSyllables9",
-            goal = "To ensure that the number of syllables in an empty string is handled correctly " +
-                    "when using a function to count items.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
+        value = "testCountSyllables6",
+        goal = "To ensure that the number of syllables in an empty string is counted as 0.",
+        points = 1.0,
+        reference = "FleschKincaidGradeLevelCalculatorTests.java"
     )
-    public void testCountSyllables9() {
+    public void testCountSyllables6() {
         // Arrange
         String text = "";
 
         // Act
         int actualCountSyllablesResult =
-                FleschKincaidGradeLevelCalculator.countItems(
-                        text,
-                        FleschKincaidGradeLevelCalculator::countSyllables);
+            FleschKincaidGradeLevelCalculator.countSyllables(text);
 
         // Assert
         assertEquals(0, actualCountSyllablesResult);
@@ -676,131 +595,146 @@ public class FleschKincaidGradeLevelCalculatorTests {
 
     /**
      * Method under test:
-     * {@link FleschKincaidGradeLevelCalculator#countItems(String, Function)}
+     * {@link FleschKincaidGradeLevelCalculator#countItems(String,
+     * BreakIterator, Predicate, Function)}
      */
     @Test
     @Rubric(
-            value = "testCountSyllables10",
-            goal = "To ensure that the number of syllables in a text with only non-word characters " +
-                    "is counted correctly when using a function to count items.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
+        value = "testCountItems",
+        goal = "To ensure that the countItems method counts the items in the text correctly.",
+        points = 1.0,
+        reference = "FleschKincaidGradeLevelCalculatorTests.java"
     )
-    public void testCountSyllables10() {
+    public void testCountItems() {
         // Arrange
-        String text = "!@#$%^&*()";
+        String text = "Here is a sentence. And here is another sentence.";
+        BreakIterator iterator = BreakIterator.getSentenceInstance(Locale.US);
+        Predicate<String> predicate = s -> true;
+        Function<String, Integer> mapper = s -> 1;
 
         // Act
-        int actualCountSyllablesResult =
-                FleschKincaidGradeLevelCalculator.countItems(
-                        text,
-                        FleschKincaidGradeLevelCalculator::countSyllables);
-
-        // Assert
-        assertEquals(0, actualCountSyllablesResult);
+        assertEquals(
+            2,
+            FleschKincaidGradeLevelCalculator.countItems(
+                text,
+                iterator,
+                predicate,
+                mapper));
     }
 
     /**
      * Method under test:
-     * {@link FleschKincaidGradeLevelCalculator#countSyllables(String)}
+     * {@link FleschKincaidGradeLevelCalculator#countItems(String,
+     * BreakIterator, Predicate, Function)}
      */
     @Test
     @Rubric(
-            value = "testCountSyllables11",
-            goal = "To ensure that the number of syllables in a text with multiple words and " +
-                    "special characters is counted correctly when using a function to count syllables.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
+        value = "testCountItems2",
+        goal = "To ensure that the countItems method counts the items in a null string correctly.",
+        points = 1.0,
+        reference = "FleschKincaidGradeLevelCalculatorTests.java"
     )
-    public void testCountSyllables11() {
-        // Arrange
-        String text = "Hello, world!";
-
-        // Act
-        int actualCountSyllablesResult =
-                FleschKincaidGradeLevelCalculator.countItems(
-                        text,
-                        FleschKincaidGradeLevelCalculator::countSyllables);
-
-        // Assert
-        assertEquals(3, actualCountSyllablesResult);
-    }
-
-    /**
-     * Method under test:
-     * {@link FleschKincaidGradeLevelCalculator#countSyllables(String)}
-     */
-    @Test
-    @Rubric(
-            value = "testCountSyllables12",
-            goal = "To ensure that the number of syllables in a null string is handled correctly " +
-                    "when using a function to count syllables.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
-    )
-    public void testCountSyllables12() {
+    public void testCountItems2() {
         // Arrange
         String text = null;
+        BreakIterator iterator = null;
+        Predicate<String> predicate = null;
+        Function<String, Integer> mapper = null;
 
         // Act
-        int actualCountSyllablesResult =
-                FleschKincaidGradeLevelCalculator.countItems(
-                        text,
-                        FleschKincaidGradeLevelCalculator::countSyllables);
+        int actualCountItemsResult =
+            FleschKincaidGradeLevelCalculator.countItems(
+                text,
+                iterator,
+                predicate,
+                mapper);
 
         // Assert
-        assertEquals(0, actualCountSyllablesResult);
+        assertEquals(0, actualCountItemsResult);
     }
 
     /**
      * Method under test:
-     * {@link FleschKincaidGradeLevelCalculator#countSyllables(String)}
+     * {@link FleschKincaidGradeLevelCalculator#countItems(String,
+     * BreakIterator, Predicate, Function)}
      */
     @Test
     @Rubric(
-            value = "testCountSyllables13",
-            goal = "To ensure that the number of syllables in an empty string is handled correctly " +
-                    "when using a function to count syllables.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
+        value = "testCountItems3",
+        goal = "To ensure that the countItems method counts the items in an empty string " +
+            "correctly.",
+        points = 1.0,
+        reference = "FleschKincaidGradeLevelCalculatorTests.java"
     )
-    public void testCountSyllables13() {
+    public void testCountItems3() {
         // Arrange
         String text = "";
+        BreakIterator iterator = null;
+        Predicate<String> predicate = null;
+        Function<String, Integer> mapper = null;
 
         // Act
-        int actualCountSyllablesResult =
-                FleschKincaidGradeLevelCalculator.countItems(
-                        text,
-                        FleschKincaidGradeLevelCalculator::countSyllables);
+        int actualCountItemsResult =
+            FleschKincaidGradeLevelCalculator.countItems(
+                text,
+                iterator,
+                predicate,
+                mapper);
 
         // Assert
-        assertEquals(0, actualCountSyllablesResult);
+        assertEquals(0, actualCountItemsResult);
     }
 
-    /**
-     * Method under test:
-     * {@link FleschKincaidGradeLevelCalculator#countSyllables(String)}
-     */
     @Test
     @Rubric(
-            value = "testCountSyllables14",
-            goal = "To ensure that the number of syllables in a text with only non-word characters " +
-                    "is counted correctly when using a function to count syllables.",
-            points = 1.0,
-            reference = "FleschKincaidGradeLevelCalculatorTests.java"
+        value = "testBardAnalyzerRunAndReturnSortedResults",
+        goal = "To verify that BardPlayAnalyzer's runAndReturnResults() method returns expected results.",
+        points = 10,
+        reference = "BardPlayAnalyzer.java"
     )
-    public void testCountSyllables14() {
-        // Arrange
-        String text = "!@#$%^&*()";
-
-        // Act
-        int actualCountSyllablesResult =
-                FleschKincaidGradeLevelCalculator.countItems(
-                        text,
-                        FleschKincaidGradeLevelCalculator::countSyllables);
-
-        // Assert
-        assertEquals(0, actualCountSyllablesResult);
+    public void testBardAnalyzerRunAndReturnResults() {
+        var results = new BardPlayAnalyzer().runAndReturnResults().toArray();
+        for (int i = 0; i < results.length; i++) {
+            assertEquals(expected[i], results[i]);
+        }
     }
+
+    private static final String[] expected = {
+        "6.43 (6th grade) is the score for A Midsummer Nights Dream",
+        "5.90 (6th grade) is the score for Alls Well That Ends Well",
+        "6.11 (6th grade) is the score for As You Like It",
+        "5.80 (6th grade) is the score for Cymbeline",
+        "6.86 (7th grade) is the score for King Henry VIII",
+        "6.93 (7th grade) is the score for King John",
+        "7.21 (7th grade) is the score for King Richard II",
+        "5.89 (6th grade) is the score for King Richard III",
+        "5.64 (6th grade) is the score for Loves Labours Lost",
+        "6.31 (6th grade) is the score for Measure for Measure",
+        "4.95 (5th grade) is the score for Much Ado About Nothing",
+        "5.93 (6th grade) is the score for Second Part of King Henry IV",
+        "5.88 (6th grade) is the score for The Comedy of Errors",
+        "7.30 (7th grade) is the score for The First Part of Henry IV",
+        "5.38 (5th grade) is the score for The First Part of King Henry IV",
+        "5.64 (6th grade) is the score for The History of Troilus and Cressida",
+        "7.41 (7th grade) is the score for The Life of King Henry V",
+        "5.16 (5th grade) is the score for The Life of Timon of Athens",
+        "6.94 (7th grade) is the score for The Merchant of Venice",
+        "4.93 (5th grade) is the score for The Merry Wives of Windsor",
+        "6.78 (7th grade) is the score for The Second Part of King Henry VI",
+        "5.82 (6th grade) is the score for The Taming of the Shrew",
+        "6.04 (6th grade) is the score for The Tempest",
+        "5.85 (6th grade) is the score for The Third Part of King Henry VI",
+        "5.33 (5th grade) is the score for The Tragedy of Anthony and Cleopatra",
+        "5.88 (6th grade) is the score for The Tragedy of Coriolanus",
+        "5.23 (5th grade) is the score for The Tragedy of Hamlet",
+        "5.16 (5th grade) is the score for The Tragedy of Julius Caesar",
+        "4.54 (5th grade) is the score for The Tragedy of King Lear",
+        "4.97 (5th grade) is the score for The Tragedy of MacBeth",
+        "4.96 (5th grade) is the score for The Tragedy of Othello",
+        "4.61 (5th grade) is the score for The Tragedy of Romeo and Juliet",
+        "7.25 (7th grade) is the score for The Tragedy of Titus Andronicus",
+        "5.74 (6th grade) is the score for The Two Gentlemen of Verona",
+        "6.48 (6th grade) is the score for The Winters Tale",
+        "5.17 (5th grade) is the score for Twelfth Night"
+    };
 }
