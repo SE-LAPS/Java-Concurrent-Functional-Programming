@@ -16,16 +16,15 @@ import static org.junit.Assert.*;
 
 @SuppressWarnings("unchecked")
 public class BardPlayAnalyzerTests {
-
     @Rule
     public Timeout timeout = new Timeout(3, TimeUnit.SECONDS);
 
     @Test
     @Rubric(
-            value = "testActiveObjectConstructor",
-            goal = "To ensure that the ActiveObject constructor initializes the object correctly.",
-            points = 1.0,
-            reference = "ActiveObject.java"
+        value = "testActiveObjectConstructor",
+        goal = "To ensure that the ActiveObject constructor initializes the object correctly.",
+        points = 1.0,
+        reference = "ActiveObject.java"
     )
     public void testActiveObjectConstructor() throws Exception {
         var task = new ActiveObject<>(x -> x + 1, 1);
@@ -40,11 +39,11 @@ public class BardPlayAnalyzerTests {
 
     @Test
     @Rubric(
-            value = "testMakeActiveObjectThreadClosure",
-            goal = "To ensure that the makeThreadClosure method creates a runnable closure correctly " +
-                    "and performs the task as expected.",
-            points = 1.0,
-            reference = "ActiveObject.java"
+        value = "testMakeActiveObjectThreadClosure",
+        goal = "To ensure that the makeThreadClosure method creates a runnable closure correctly " +
+            "and performs the task as expected.",
+        points = 1.0,
+        reference = "ActiveObject.java"
     )
     public void testActiveObjectMakeThreadClosure() throws Exception {
         var task = new ActiveObject<>(x -> x + 1, 1);
@@ -62,16 +61,16 @@ public class BardPlayAnalyzerTests {
 
     @Test
     @Rubric(
-            value = "testBardAnalyzerStart",
-            goal = "To ensure that the start method properly starts the ActiveObject's thread.",
-            points = 1.0,
-            reference = "ActiveObject.java"
+        value = "testBardAnalyzerStart",
+        goal = "To ensure that the start method properly starts the ActiveObject's thread.",
+        points = 1.0,
+        reference = "ActiveObject.java"
     )
     public void testBardAnalyzerStart() {
         var task = new ActiveObject<>(x -> x + 1, 1);
         task.mThread = Thread
-                .ofVirtual()
-                .unstarted(new FutureTask<>(() -> 9));
+            .ofVirtual()
+            .unstarted(new FutureTask<>(() -> 9));
         assertSame(task.getThread().getState(), Thread.State.NEW);
         task.start();
         assertSame(task.getThread().getState(), Thread.State.RUNNABLE);
@@ -80,11 +79,11 @@ public class BardPlayAnalyzerTests {
 
     @Test
     @Rubric(
-            value = "testBardAnalyzerMakeActiveObjects",
-            goal = "To ensure that the makeActiveObjects method correctly creates ActiveObjects based" +
-                    " on the input map and task function.",
-            points = 1.0,
-            reference = "ActiveObject.java"
+        value = "testBardAnalyzerMakeActiveObjects",
+        goal = "To ensure that the makeActiveObjects method correctly creates ActiveObjects based" +
+            " on the input map and task function.",
+        points = 1.0,
+        reference = "ActiveObject.java"
     )
     public void testMakeActiveObjects() throws Exception {
         var map = new HashMap<String, Integer>();
@@ -105,11 +104,11 @@ public class BardPlayAnalyzerTests {
 
     @Test
     @Rubric(
-            value = "testBardAnalyzerMakeActiveObjects",
-            goal = "To ensure that BardPlayAnalyzer's makeActiveObjects() method creates the expected" +
-                    " number of ActiveObjects.",
-            points = 1.0,
-            reference = "BardPlayAnalyzerTests.java"
+        value = "testBardAnalyzerMakeActiveObjects",
+        goal = "To ensure that BardPlayAnalyzer's makeActiveObjects() method creates the expected" +
+            " number of ActiveObjects.",
+        points = 1.0,
+        reference = "BardPlayAnalyzerTests.java"
     )
     public void testBardAnalyzerMakeActiveObjects() {
         var o = new BardPlayAnalyzer().makeActiveObjects();
@@ -119,11 +118,11 @@ public class BardPlayAnalyzerTests {
 
     @Test
     @Rubric(
-            value = "testBardAnalyzerStartActiveObjects",
-            goal = "To verify that BardPlayAnalyzer's startActiveObjects() method correctly starts " +
-                    "the ActiveObjects.",
-            points = 1.0,
-            reference = "BardPlayAnalyzerTests.java"
+        value = "testBardAnalyzerStartActiveObjects",
+        goal = "To verify that BardPlayAnalyzer's startActiveObjects() method correctly starts " +
+            "the ActiveObjects.",
+        points = 1.0,
+        reference = "BardPlayAnalyzerTests.java"
     )
     public void testBardAnalyzerStartActiveObjects() {
         var b = new BardPlayAnalyzer();
@@ -139,19 +138,19 @@ public class BardPlayAnalyzerTests {
 
     @Test
     @Rubric(
-            value = "testBardAnalyzerProcessActiveObjects",
-            goal = "To ensure that BardPlayAnalyzer's processActiveObjects() method processes the " +
-                    "ActiveObjects and returns the expected results.",
-            points = 1.0,
-            reference = "BardPlayAnalyzerTests.java"
+        value = "testBardAnalyzerProcessActiveObjects",
+        goal = "To ensure that BardPlayAnalyzer's processActiveObjects() method processes the " +
+            "ActiveObjects and returns the expected results.",
+        points = 1.0,
+        reference = "BardPlayAnalyzerTests.java"
     )
     public void testBardAnalyzerProcessActiveObjects() {
         var o1 = new ActiveObject<Map.Entry<String, String>, Double>(
-                x -> Double.valueOf(x.getValue()),
-                Map.entry("1", "1"));
+            x -> Double.valueOf(x.getValue()),
+            Map.entry("1", "1"));
         var o2 = new ActiveObject<Map.Entry<String, String>, Double>(
-                x -> Double.valueOf(x.getValue()),
-                Map.entry("2", "2"));
+            x -> Double.valueOf(x.getValue()),
+            Map.entry("2", "2"));
         o1.start();
         o2.start();
         var b = new BardPlayAnalyzer();
@@ -160,8 +159,8 @@ public class BardPlayAnalyzerTests {
             add(o2);
         }});
         String[] expected = {
-                "1.00 (1st grade) is the score for 1",
-                "2.00 (2nd grade) is the score for 2"
+            "1.00 (1st grade) is the score for 1",
+            "2.00 (2nd grade) is the score for 2"
         };
         assertEquals(2, results.size());
         for (int i = 0; i < results.size(); i++) {
@@ -171,11 +170,11 @@ public class BardPlayAnalyzerTests {
 
     @Test
     @Rubric(
-            value = "testBardAnalyzerProcessInput",
-            goal = "To verify that BardPlayAnalyzer's processInput() method returns the correct " +
-                    "result based on the input.",
-            points = 1.0,
-            reference = "BardPlayAnalyzerTests.java"
+        value = "testBardAnalyzerProcessInput",
+        goal = "To verify that BardPlayAnalyzer's processInput() method returns the correct " +
+            "result based on the input.",
+        points = 1.0,
+        reference = "BardPlayAnalyzerTests.java"
     )
     public void testBardAnalyzerProcessInput() {
         var result = new BardPlayAnalyzer().processInput(Map.entry("1", "two. sentences."));
@@ -185,55 +184,56 @@ public class BardPlayAnalyzerTests {
 
     @Test
     @Rubric(
-            value = "testBardAnalyzerRunAndReturnSortedResults",
-            goal = "To verify that BardPlayAnalyzer's runAndReturnResults() method returns expected " +
-                    "results.",
-            points = 1.0,
-            reference = "BardPlayAnalyzerTests.java"
+        value = "testBardAnalyzerRunAndReturnSortedResults",
+        goal = "To verify that BardPlayAnalyzer's runAndReturnResults() method returns expected " +
+            "results.",
+        points = 1.0,
+        reference = "BardPlayAnalyzerTests.java"
     )
     public void testBardAnalyzerRunAndReturnSortedResults() {
         var results = new BardPlayAnalyzer().runAndReturnResults().toArray();
         for (int i = 0; i < results.length; i++) {
+//            System.out.println(results[i]);
             assertEquals(expected[i], results[i]);
         }
     }
 
     private static final String[] expected = {
-            "6.43 (6th grade) is the score for A Midsummer Nights Dream",
-            "5.90 (6th grade) is the score for Alls Well That Ends Well",
-            "6.11 (6th grade) is the score for As You Like It",
-            "5.80 (6th grade) is the score for Cymbeline",
-            "6.86 (7th grade) is the score for King Henry VIII",
-            "6.93 (7th grade) is the score for King John",
-            "7.21 (7th grade) is the score for King Richard II",
-            "5.89 (6th grade) is the score for King Richard III",
-            "5.64 (6th grade) is the score for Loves Labours Lost",
-            "6.31 (6th grade) is the score for Measure for Measure",
-            "4.95 (5th grade) is the score for Much Ado About Nothing",
-            "5.93 (6th grade) is the score for Second Part of King Henry IV",
-            "5.88 (6th grade) is the score for The Comedy of Errors",
-            "7.30 (7th grade) is the score for The First Part of Henry IV",
-            "5.38 (5th grade) is the score for The First Part of King Henry IV",
-            "5.64 (6th grade) is the score for The History of Troilus and Cressida",
-            "7.41 (7th grade) is the score for The Life of King Henry V",
-            "5.16 (5th grade) is the score for The Life of Timon of Athens",
-            "6.94 (7th grade) is the score for The Merchant of Venice",
-            "4.93 (5th grade) is the score for The Merry Wives of Windsor",
-            "6.78 (7th grade) is the score for The Second Part of King Henry VI",
-            "5.82 (6th grade) is the score for The Taming of the Shrew",
-            "6.04 (6th grade) is the score for The Tempest",
-            "5.85 (6th grade) is the score for The Third Part of King Henry VI",
-            "5.33 (5th grade) is the score for The Tragedy of Anthony and Cleopatra",
-            "5.88 (6th grade) is the score for The Tragedy of Coriolanus",
-            "5.23 (5th grade) is the score for The Tragedy of Hamlet",
-            "5.16 (5th grade) is the score for The Tragedy of Julius Caesar",
-            "4.54 (5th grade) is the score for The Tragedy of King Lear",
-            "4.97 (5th grade) is the score for The Tragedy of MacBeth",
-            "4.96 (5th grade) is the score for The Tragedy of Othello",
-            "4.61 (5th grade) is the score for The Tragedy of Romeo and Juliet",
-            "7.25 (7th grade) is the score for The Tragedy of Titus Andronicus",
-            "5.74 (6th grade) is the score for The Two Gentlemen of Verona",
-            "6.48 (6th grade) is the score for The Winters Tale",
-            "5.17 (5th grade) is the score for Twelfth Night"
+        "6.43 (6th grade) is the score for A Midsummer Nights Dream",
+        "5.90 (6th grade) is the score for Alls Well That Ends Well",
+        "6.11 (6th grade) is the score for As You Like It",
+        "5.80 (6th grade) is the score for Cymbeline",
+        "6.86 (7th grade) is the score for King Henry VIII",
+        "6.93 (7th grade) is the score for King John",
+        "7.21 (7th grade) is the score for King Richard II",
+        "5.89 (6th grade) is the score for King Richard III",
+        "5.64 (6th grade) is the score for Loves Labours Lost",
+        "6.31 (6th grade) is the score for Measure for Measure",
+        "4.95 (5th grade) is the score for Much Ado About Nothing",
+        "5.93 (6th grade) is the score for Second Part of King Henry IV",
+        "5.88 (6th grade) is the score for The Comedy of Errors",
+        "7.30 (7th grade) is the score for The First Part of Henry IV",
+        "5.38 (5th grade) is the score for The First Part of King Henry IV",
+        "5.64 (6th grade) is the score for The History of Troilus and Cressida",
+        "7.41 (7th grade) is the score for The Life of King Henry V",
+        "5.16 (5th grade) is the score for The Life of Timon of Athens",
+        "6.94 (7th grade) is the score for The Merchant of Venice",
+        "4.93 (5th grade) is the score for The Merry Wives of Windsor",
+        "6.78 (7th grade) is the score for The Second Part of King Henry VI",
+        "5.82 (6th grade) is the score for The Taming of the Shrew",
+        "6.04 (6th grade) is the score for The Tempest",
+        "5.85 (6th grade) is the score for The Third Part of King Henry VI",
+        "5.33 (5th grade) is the score for The Tragedy of Anthony and Cleopatra",
+        "5.88 (6th grade) is the score for The Tragedy of Coriolanus",
+        "5.23 (5th grade) is the score for The Tragedy of Hamlet",
+        "5.16 (5th grade) is the score for The Tragedy of Julius Caesar",
+        "4.54 (5th grade) is the score for The Tragedy of King Lear",
+        "4.97 (5th grade) is the score for The Tragedy of MacBeth",
+        "4.96 (5th grade) is the score for The Tragedy of Othello",
+        "4.61 (5th grade) is the score for The Tragedy of Romeo and Juliet",
+        "7.25 (7th grade) is the score for The Tragedy of Titus Andronicus",
+        "5.74 (6th grade) is the score for The Two Gentlemen of Verona",
+        "6.48 (6th grade) is the score for The Winters Tale",
+        "5.17 (5th grade) is the score for Twelfth Night"
     };
 }
